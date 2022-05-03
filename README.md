@@ -12,8 +12,24 @@ The draw back of having a dynamic size with linked lists is that we lose random 
 
 Hash tables : 
 this data structure is adapted for insert, delete and lookup opertations :
+
 ![image](https://user-images.githubusercontent.com/42012627/166198264-43c7e7a6-f0a1-46ac-80f8-f739e99d61e0.png)
+
 A hash table data structure has a key and value. The key is hashed through a consistent hash function. By consistant, I mean that it will always return the same result for the same input key. The hash function indicates where in the hash table the element is. For example the hash function bellow puts elements in the hash table according to their alphabetical order
+
 ![image](https://user-images.githubusercontent.com/42012627/166198626-2072c951-f22c-4e2c-b976-e5a8e55040f2.png)
+
 Since we already know where each element should be according to its hashed key, we only need to lookup a single part of the table.
 
+##collisions
+![image](https://user-images.githubusercontent.com/42012627/166509166-96cb48d7-8917-4df4-9a60-c39953e234a2.png)
+
+If we have another element is the hashmap that the hash function locates in the asme place as an already existing element, a collision happens.
+
+![image](https://user-images.githubusercontent.com/42012627/166509395-143597cd-3ea1-4c31-948c-717b0716111e.png)
+
+A soltion is to use separate chaining.The hash table is a list of pointers to linked lists.
+
+![image](https://user-images.githubusercontent.com/42012627/166509673-02f47b6b-e8fa-422f-8136-42068b9b72a5.png)
+
+In worst case scenario we would have a maximum of o(n/k). This represents a significant improvment compared to o(n).  
