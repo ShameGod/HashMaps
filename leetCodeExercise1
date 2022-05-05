@@ -8,11 +8,15 @@ class MyHashSet {
     }
     
     public void add(int key) {
-        this.hashSet.add(key);
+        if(!contains(key)){
+            this.hashSet.add(key);
+        }
     }
     
     public void remove(int key) {
-        this.hashSet.remove(key);
+        if(contains(key)){
+            this.hashSet.remove(new Integer(key)); // if I used the primal type int, i would have tried to remove the index key not the element key 
+        }
     }
     
     public boolean contains(int key) {
