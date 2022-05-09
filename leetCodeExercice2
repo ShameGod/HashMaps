@@ -1,0 +1,41 @@
+class MyHashMap {
+
+    ArrayList<ArrayList<Integer>> hashMap = new ArrayList<>();
+    
+    public MyHashMap() {
+        System.out.println("lessgoo");
+    }
+    
+    public void put(int key, int value) {
+        ArrayList<Integer> tempArray = new ArrayList<Integer>(2);
+        ArrayList<Integer> previousArray = new ArrayList<Integer>(2);
+        previousArray.add(key);
+        tempArray.add(key);
+        tempArray.add(value);
+        if(get(key)==-1){
+            hashMap.add(tempArray);
+        }else{
+            previousArray.add(get(key));
+            this.hashMap.remove(previousArray);
+            put(key, value); //tail recusion 
+        }        
+    }
+    
+    public int get(int key) {
+        for(ArrayList<Integer> map : hashMap){
+            if(map.get(0)==key){
+                return map.get(1);
+            }
+        }
+        return -1;
+    }
+    
+    public void remove(int key) {
+        for(ArrayList<Integer> map : hashMap){
+            if(map.get(0)==key){
+                hashMap.remove(map);
+                break;
+            }
+        }
+    }
+}
