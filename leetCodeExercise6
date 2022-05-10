@@ -1,0 +1,30 @@
+class Solution {
+    Set<Integer> hashSet = new HashSet<>();
+    public boolean isHappy(int n) {
+        if(squareOfDigits(n)==1){
+            return true;
+        }
+        return false;
+    }
+    
+    private int squareOfDigits(int n){
+        String number = String.valueOf(n);
+        char[] digits = number.toCharArray();
+        int result = squarePlus(digits);
+        if(result==1 || hashSet.contains(result)){
+            return result;
+        }
+        hashSet.add(result);
+        System.out.println("the resutl is " + result);
+        return squareOfDigits(result);
+    }
+    
+    private int squarePlus(char[] digits){
+        int result = 0;
+        for(char c : digits){
+            result+=Character.getNumericValue(c)*Character.getNumericValue(c);
+        }
+        return result;
+    }
+}
+    
