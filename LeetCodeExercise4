@@ -1,0 +1,16 @@
+class Solution {
+    Set<Integer> hashSet = new HashSet<>();
+    public int singleNumber(int[] nums) {
+        int sum1 =0;
+        int sum2 =0;
+        for(int i : nums){
+            if(!hashSet.contains(i)){
+                sum1+=i;
+                hashSet.add(i);
+                System.out.print("this the hashet now " + hashSet);
+            }
+            sum2+=i;
+        }
+        return (int)2*sum1 - sum2;        
+    }
+}
