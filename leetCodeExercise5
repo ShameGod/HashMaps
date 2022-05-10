@@ -1,0 +1,36 @@
+class Solution {
+    Set<Integer> hashSet = new HashSet<>();
+    
+    public int[] intersection(int[] nums1, int[] nums2) {
+        for(int i : nums1){
+            for(int j : nums2){
+                if(i==j){
+                    hashSet.add(i);
+                }
+            }
+        }
+        System.out.print(hashSet);
+        return setToArray(hashSet);
+    }
+    
+    private int[] setToArray(Set<Integer> inputSet){
+        int[] result = new int[inputSet.size()];
+        Iterator<Integer> value = inputSet.iterator();
+        Integer setSize = inputSet.size();
+        System.out.println("the size of the set is " + setSize);
+        int i=0;
+        while(value.hasNext() && i<setSize){
+            result[i]=value.next().intValue();
+            i++;
+        }
+        return result;
+    }
+}
+
+
+
+/*
+Important notes : 
+The use of iterators with While loop is useful when we would like to iterate using two variables 
+With sets it is not possible to access an index directly 
+*/
