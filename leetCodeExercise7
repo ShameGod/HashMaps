@@ -1,0 +1,18 @@
+class Solution {
+    Map<Integer, Integer> hashmap = new HashMap<>();
+    public int[] twoSum(int[] nums, int target) {
+        int[] resultArray = new int[2];
+        for(int i=0; i<nums.length; i++){
+            hashmap.putIfAbsent(nums[i],i);
+            System.out.println("treating " + nums[i] + " for the index " + i);
+            int searchedElement=target - nums[i];
+            if(hashmap.containsKey(searchedElement) && hashmap.get(searchedElement)!=i){
+                System.out.println("we have found the element " + (searchedElement));
+                resultArray[0]=i;
+                resultArray[1]=hashmap.get(searchedElement);
+                return resultArray;
+            }
+        }
+        return nums;
+    }
+}
