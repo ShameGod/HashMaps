@@ -33,3 +33,16 @@ A soltion is to use separate chaining.The hash table is a list of pointers to li
 ![image](https://user-images.githubusercontent.com/42012627/166509673-02f47b6b-e8fa-422f-8136-42068b9b72a5.png)
 
 In worst case scenario we would have a maximum of o(n/k). This represents a significant improvment compared to o(n).  
+
+## Difference between a hashSet and HashMap 
+HashSet uses HashMap for its implementation. Objects inserted in hashSets are actually hashMap keys with a value of a dummy object. 
+HashSet: 
+ - implements the Set interface allow on one null value and no duplicate values 
+ - we can't access an element in a hashSet directly we need to iterate every time as there is no get function 
+
+HashMap: 
+ - contains a pair of key values and values can be accessed directly through their key 
+ - HashMap can contain duplicate values but not keys 
+
+
+
