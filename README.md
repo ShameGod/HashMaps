@@ -44,5 +44,25 @@ HashMap:
  - contains a pair of key values and values can be accessed directly through their key 
  - HashMap can contain duplicate values but not keys 
 
+Both HashMap and HashSet can't have a non primal type in the key 
 
+## Iterating over a Hashmap 
 
+There are two main ways to iterate over a hashmap : 
+        
+        for (Map.Entry<Integer, Integer> entry : hashmap.entrySet()) {
+            System.out.print("(" + entry.getKey() + "," + entry.getValue() + ") ");
+        }
+
+Or 
+        Set entrySet = hashmap.entrySet();
+        Iterator it = entrySet.iterator();
+        System.out.println("HashMap Key-Value Pairs : ");
+        while(it.hasNext()){
+           Map.Entry me = (Map.Entry)it.next();
+           System.out.println("Key is: "+me.getKey() + " & " + " value is: "+me.getValue());
+       }
+        
+The me.getValue is of type Object, it is necessary to cast it to the used Type
+
+### hashMaps are not ordered when we iterate over them the order is not kept !! 
