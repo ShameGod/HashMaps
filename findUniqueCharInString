@@ -24,3 +24,9 @@ class Solution {
         return -1;
     }
 }
+
+
+/*
+*  What I have noticed from this exercise is that hashmaps are not ordered 
+*  Hash maps can only get Java non primitive types as parameters
+*/
