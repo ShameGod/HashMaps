@@ -55,6 +55,7 @@ There are two main ways to iterate over a hashmap :
         }
 
 Or 
+        ```
         Set entrySet = hashmap.entrySet();
         Iterator it = entrySet.iterator();
         System.out.println("HashMap Key-Value Pairs : ");
@@ -62,7 +63,14 @@ Or
            Map.Entry me = (Map.Entry)it.next();
            System.out.println("Key is: "+me.getKey() + " & " + " value is: "+me.getValue());
        }
-        
+        ```
+
 The me.getValue is of type Object, it is necessary to cast it to the used Type
 
 ### hashMaps are not ordered when we iterate over them the order is not kept !! 
+
+
+### Examples of the usage of hashmaps in real life 
+
+The use of Hash maps can be very tricky. For example to groupe anagrams (exercise and answer available) I had to use the sorted string as a key to group the words 
+It is way easier than using an array 
