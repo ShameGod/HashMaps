@@ -1,0 +1,24 @@
+class Solution {
+    HashMap<Integer, Integer> hashmap = new HashMap<>();
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+        return hasDuplicate(nums, k);
+        // Je vais parcourir le tableau et mettre dans la hashmap(clé =nums[i], valeur = i) 
+    }
+    
+    private boolean hasDuplicate(int[] nums, int k){
+        for(int i=0; i<nums.length; i++){
+            if(hashmap.containsKey(nums[i])){
+             if(Math.abs(i-hashmap.get(nums[i]))<=k){
+                 return true;
+             }   
+            }
+            hashmap.put(nums[i],i);
+        }
+        return false;
+    }
+}
+
+/*
+*What is important here is to know that the real advantage of hash maps (in adition to their quick search) is that we can choose freely the key of the message. 
+*Here for example it was easier for me to have a collection with nums[i] as a key and the index as the value
+*/
