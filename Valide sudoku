@@ -1,0 +1,25 @@
+class Solution {
+    HashSet<String> hashset = new HashSet<>();
+    private final int BOARD_LENGTH =9;
+    public boolean isValidSudoku(char[][] board) {
+        for(int i =0; i<BOARD_LENGTH; i++){
+           for(int j =0; j<BOARD_LENGTH; j++){
+                char currentChar = board[i][j];
+                if(currentChar!='.'){
+                    if(
+                    !hashset.add(currentChar+ "for the raw" + i) ||
+                    !hashset.add(currentChar+ "for the column" + j) ||
+                    !hashset.add(currentChar+ "in the sub group" + i/3+ " " + j/3)){
+                        return false;
+                    };
+                }
+                
+            } 
+        }
+        return true;
+    }   
+}
+
+/*
+* notice the genius trick with hashSet, by using Strings
+*/
