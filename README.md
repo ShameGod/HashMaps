@@ -39,6 +39,7 @@ HashSet uses HashMap for its implementation. Objects inserted in hashSets are ac
 HashSet: 
  - implements the Set interface allow on one null value and no duplicate values 
  - we can't access an element in a hashSet directly we need to iterate every time as there is no get function 
+ - You can directly add an element to the hashet with the method add(). THIS METHOD RETURNS TRUE IF THE ELEMENT DOESN'T EXIST IN THE HASHSET AND FALSE IF IT DOES
 
 HashMap: 
  - contains a pair of key values and values can be accessed directly through their key 
