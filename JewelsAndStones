@@ -1,0 +1,17 @@
+class Solution {
+    HashSet<Integer> hashset = new HashSet<>();
+    public int numJewelsInStones(String jewels, String stones) {
+        int output=0;
+        for(char c : jewels.toCharArray()){
+            int ascii = c;
+            hashset.add(ascii);
+        }
+        for(char c : stones.toCharArray()){
+            int ascii = c;
+            if(hashset.contains(ascii)){
+                output = output + 1;
+            }
+        }
+        return output;
+    }
+}
