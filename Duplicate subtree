@@ -1,0 +1,62 @@
+public class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+    TreeNode() {}
+    TreeNode(int val) { this.val = val; }
+    TreeNode(int val, TreeNode left, TreeNode right) {
+       this.val = val;
+       this.left = left;
+       this.right = right;
+    }
+ }
+ 
+class Solution {
+    private HashSet<List<Integer>> visitedNode = new HashSet<>();
+    private HashMap<List<Integer>, TreeNode> resultmap = new HashMap<>();
+    public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
+        List<Integer> treeElements = new ArrayList<>();
+        treeElements.add(root.val);
+        if(root.left !=null){
+         treeElements.add(root.left.val);
+        
+        }
+        
+        if(root.right !=null){
+            treeElements.add(root.right.val);
+        }
+        
+        if(!visitedNode.add(treeElements)){
+            System.out.println("the subtree already exists " + treeElements);
+            resultmap.put(treeElements,root);        
+        }        
+        if(root.left!=null){
+            System.out.println("left element" + root.left.val);
+            findDuplicateSubtrees(root.left);
+        }
+        if(root.right!=null){
+            System.out.println("right element " + root.right.val);
+            findDuplicateSubtrees(root.right);
+        }
+        
+        System.out.println("result list" + resultmap);
+        return mapToList(resultmap);
+    }
+    
+    private List<TreeNode> mapToList(HashMap<List<Integer>, TreeNode> hashmap){
+        List<TreeNode> resultList = new ArrayList<>();
+        for (Map.Entry<List<Integer>, TreeNode> entry : hashmap.entrySet()) {
+            System.out.print("(" + entry.getKey() + "," + entry.getValue() + ") ");
+            resultList.add(entry.getValue());
+        }
+        return resultList;
+    }
+    
+
+}
+
+
+/*
+* In this exercise I learned about the different ways to traverse a Tree data structure, as it is not a linear structure there many ways to traverse it 
+* there are three ways : preorder (root, left, right) in order (left, root, right) and postorder(left,right,root)
+*/
