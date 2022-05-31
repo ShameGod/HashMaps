@@ -1,0 +1,33 @@
+class Solution {
+    HashMap<String, Integer> hashmap = new HashMap<>();
+    public int lengthOfLongestSubstring(String s) {
+        HashSet<Character> hashset = new HashSet<>();
+        String str = "";
+        for(int i =0; i<s.length(); i++){
+            if(!hashset.add(s.charAt(i))){
+                String subString1 = s.substring(0,i);
+                String subString2 = s.substring(1, s.length());
+                hashmap.put(subString1, hashset.size());
+                return lengthOfLongestSubstring(subString2);
+            }else{
+                str = str + s.charAt(i);
+                hashmap.put(str,hashset.size());
+            }
+        }
+        return maxHashMap();
+    }
+    
+    private int maxHashMap(){
+        int max=0;
+        for (Map.Entry<String, Integer> entry : hashmap.entrySet()) {
+            if(entry.getValue().intValue()>max){
+                max = entry.getValue().intValue();
+            }
+        }
+        return max;
+    }
+}
+
+/*
+* The complexity is O(n) which is very efficient. This was achievable thanks to the recursion
+*/
