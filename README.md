@@ -20,6 +20,8 @@ A hash table data structure has a key and value. The key is hashed through a con
 ![image](https://user-images.githubusercontent.com/42012627/166198626-2072c951-f22c-4e2c-b976-e5a8e55040f2.png)
 
 Since we already know where each element should be according to its hashed key, we only need to lookup a single part of the table.
+- The complexity of inserting an element in a hashmap is : o(1)
+- The complexity of searching an element in a hashmap is : o(n) 
 
 ##collisions
 ![image](https://user-images.githubusercontent.com/42012627/166509166-96cb48d7-8917-4df4-9a60-c39953e234a2.png)
