@@ -1,4 +1,4 @@
-# Google-data-algorithms
+# Hash maps : 
 Following the course Google data &amp; algorithms 
 
 ## Maps and Doctionaries
