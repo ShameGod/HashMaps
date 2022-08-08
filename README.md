@@ -70,6 +70,11 @@ Or
 
 The me.getValue is of type Object, it is necessary to cast it to the used Type
 
+### Put syntax : 
+ ```
+ hashMap.put(*key*, *value*);
+ ```
+
 ### hashMaps are not ordered when we iterate over them the order is not kept !! 
 
 
