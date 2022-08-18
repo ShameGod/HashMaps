@@ -80,6 +80,8 @@ The me.getValue is of type Object, it is necessary to cast it to the used Type
 ### to check if a hashmap contains a key : 
 ```Hash_Map.containsKey(key_element)```
 
+### to get an element : 
+```Hash_Map.get(Object key_element)```
 
 ### Examples of the usage of hashmaps in real life 
 
