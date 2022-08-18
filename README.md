@@ -77,6 +77,9 @@ The me.getValue is of type Object, it is necessary to cast it to the used Type
 
 ### hashMaps are not ordered when we iterate over them the order is not kept !! 
 
+### to check if a hashmap contains a key : 
+```Hash_Map.containsKey(key_element)```
+
 
 ### Examples of the usage of hashmaps in real life 
 
