@@ -47,7 +47,7 @@ HashMap:
  - contains a pair of key values and values can be accessed directly through their key 
  - HashMap can contain duplicate values but not keys 
 
-Both HashMap and HashSet can't have a non primal type in the key 
+**Both HashMap and HashSet can't have a non primitive type in the key** they take Integer not int  
 
 ## Iterating over a Hashmap 
 
